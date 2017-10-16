@@ -100,36 +100,39 @@
         audioSelect.on('change', step1);
       });
 
-      function step1() {
-        // (1) まずはビデオのみのストリームを取り出す
-        navigator.mediaDevices.getUserMedia({
-            audio: false,
-            video: true
-          },
-          function(videoStream) {
-            // Set your video displays
-            $('#my-video').prop('src', URL.createObjectURL(videoStream));
-            window.localStream = videoStream;
-            // (2) 次に、音声のみのストリームを取り出す
-            navigator.mediaDevices.getUserMedia({
-                audio: true,
-                video: false
-              },
-              function(audioStream) {
-                SpeechJammer.setupSJ(audioStream);
+    function step1() {
+      // Get audio/video stream
+      const audioSource = $('#audioSource').val();
+      const videoSource = $('#videoSource').val();
+      const constraints = {
+        audio: {
+          deviceId: audioSource ? {
+            exact: audioSource
+          } : undefined
+        },
+        video: {
+          deviceId: videoSource ? {
+            exact: videoSource
+          } : undefined
+        },
+      };
 
-                step2();
-              },
-              function() {
-                $('#step1-error').show();　
-              } //エラー表示
-            );
-          },
-          function() {
-            $('#step1-error').show();　
-          } //エラー表示
-        );
-      }
+      navigator.mediaDevices.getUserMedia(constraints).then(stream => {
+        $('#my-video').get(0).srcObject = stream;
+        localStream = stream;
+         SpeechJammer.setupSJ(stream);
+        if (existingCall) {
+          existingCall.replaceStream(stream);
+          return;
+        }
+
+        step2();
+      }).catch(err => {
+        $('#step1-error').show();
+        console.error(err);
+      });
+    }
+
     function step2() {
       $('#step1, #step3').hide();
       $('#step2').show();
