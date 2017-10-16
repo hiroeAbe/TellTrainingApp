@@ -50,9 +50,7 @@ SpeechJammer.setupSJ = function(audioStream) {
         drygain.gain.value = 1 - mix;
     }
   document.querySelector("input#speechjammer").addEventListener("change", Setup);
-  document.querySelector("input#time").addEventListener("change", Setup);
-  document.querySelector("input#feedback").addEventListener("change", Setup);
-  document.querySelector("input#mix").addEventListener("change", Setup);
+
 
   Setup();
 }
