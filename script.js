@@ -1,4 +1,4 @@
-/* eslint-disable require-jsdoc */
+
 $(function() {
   // Peer object
   const peer = new Peer({
@@ -8,6 +8,9 @@ $(function() {
 
   let localStream;
   let existingCall;
+  
+  /* eslint-disable require-jsdoc */
+  $.getScript("speechjammer.js");
 
   peer.on('open', () => {
     $('#my-id').text(peer.id);
