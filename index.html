@@ -107,19 +107,27 @@ $(function() {
       audio: {deviceId: audioSource ? {exact: audioSource} : undefined},
       video: {deviceId: videoSource ? {exact: videoSource} : undefined},
     };
-
+    navigator.getUserMedia({audio:false,video:true},
     navigator.mediaDevices.getUserMedia(constraints).then(stream => {
       $('#my-video').get(0).srcObject = stream;
       localStream = stream;
+      navigator.getUserMedia({
+        audio:true,
+        video:false,
+      },function(audioSource){
+        SpeechJammer.setupSJ(audioStream);
       if (existingCall) {
         existingCall.replaceStream(stream);
         return;
       }
       step2();
+    }),
+  
     }).catch(err => {
       $('#step1-error').show();
       console.error(err);
     });
+  );
   }
 
   function step2() {
