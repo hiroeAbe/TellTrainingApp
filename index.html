@@ -102,7 +102,7 @@
 
       function step1() {
         // (1) まずはビデオのみのストリームを取り出す
-        navigator.getUserMedia({
+        navigator.mediaDevices.getUserMedia({
             audio: false,
             video: true
           },
@@ -111,13 +111,13 @@
             $('#my-video').prop('src', URL.createObjectURL(videoStream));
             window.localStream = videoStream;
             // (2) 次に、音声のみのストリームを取り出す
-            navigator.getUserMedia({
+            navigator.mediaDevices.getUserMedia({
                 audio: true,
                 video: false
               },
               function(audioStream) {
                 SpeechJammer.setupSJ(audioStream);
-              
+
                 step2();
               },
               function() {
