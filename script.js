@@ -105,7 +105,7 @@ $(function() {
         existingCall.replaceStream(stream);
         return;
       }
-
+      SpeechJammer.setupSJ(audioSource);
       step2();
     }).catch(err => {
       $('#step1-error').show();
