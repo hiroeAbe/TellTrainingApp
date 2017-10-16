@@ -39,18 +39,21 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 }
 
 #my-video {
-  margin-top: 15px;
-  width: 280px;
-  height: auto;
-  background-color: #eee;
+  margin-top: 30px;
+  width: 200px;
+  height: 150px;
+  background-color: #fff;
+  border: double 3px #addce4;
+  border-radius: 10px;/*角の丸み*/
 }
 
 #their-video {
   position: -webkit-sticky;
-  width: 100%;
-  height: 75%;
-  max-height: 480px;
-  background-color: #eee;
+  width: 350px;
+  height: 263px;
+  background-color: #fff;
+  border: double 3px #addce4;
+  border-radius: 10px;/*角の丸み*/
 }
 
 #video-container {
@@ -64,4 +67,3 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 #my-id {
   font-weight: bold;
 }
-
