@@ -100,48 +100,30 @@
         audioSelect.on('change', step1);
       });
 
-    function step1() {
+      function step1() {
       // Get audio/video stream
       const audioSource = $('#audioSource').val();
       const videoSource = $('#videoSource').val();
       const constraints = {
-        audio: {
-          deviceId: audioSource ? {
-            exact: audioSource
-          } : undefined
-        },
-        video: {
-          deviceId: videoSource ? {
-            exact: videoSource
-          } : undefined
-        },
+        audio: {deviceId: audioSource ? {exact: audioSource} : undefined},
+        video: {deviceId: videoSource ? {exact: videoSource} : undefined},
       };
-      navigator.getUserMedia({
-          audio: false,
-          video: true
-        },
-        navigator.mediaDevices.getUserMedia(constraints).then(stream => {
-          $('#my-video').get(0).srcObject = stream;
-          localStream = stream;
-          navigator.getUserMedia({
-              audio: true,
-              video: false,
-            }, function(audioSource) {
-              SpeechJammer.setupSJ(audioStream);
-              if (existingCall) {
-                existingCall.replaceStream(stream);
-                return;
-              }
-              step2();
-            }),
 
-        }).catch(err => {
-          $('#step1-error').show();
-          console.error(err);
-        });
-      );
-    };
+      navigator.mediaDevices.getUserMedia(constraints).then(stream => {
+        $('#my-video').get(0).srcObject = stream;
+        localStream = stream;
 
+        if (existingCall) {
+          existingCall.replaceStream(stream);
+          return;
+        }
+
+        step2();
+      }).catch(err => {
+        $('#step1-error').show();
+        console.error(err);
+      });
+    }
     function step2() {
       $('#step1, #step3').hide();
       $('#step2').show();
