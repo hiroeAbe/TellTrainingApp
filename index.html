@@ -58,14 +58,20 @@
       step1();
     });
 
-     //peer.connect('#callto-id');
-     /*peer.on('connection',connection =>{
-       connection.send('hoge');
-       connection.on('data',data =>{
-         console.log(data);
-       });
-     });*/
+    peer.on('connection', c => {
+      // Show connection when it is completely ready
+      c.on('open', () => connect(c));
+      c.send('send');　
+      connect(c);
+    });
+    // Handle a connection object.
+    function connect(c) {
+      // Handle a chat connection.
+      c.on('data', data => {
+        console.log(data);
+      });
 
+    }
     // set up audio and video input selectors
     const audioSelect = $('#audioSource');
     const videoSelect = $('#videoSource');
@@ -128,7 +134,7 @@
       navigator.mediaDevices.getUserMedia(constraints).then(stream => {
         $('#my-video').get(0).srcObject = stream;
         localStream = stream;
-         SpeechJammer.setupSJ(stream);
+        SpeechJammer.setupSJ(stream);
         if (existingCall) {
           existingCall.replaceStream(stream);
           return;
@@ -224,9 +230,9 @@
       <td><input id="speechjammer" type="checkbox" /></td>
     </tr>
     <tr>
-     <td>Mix : </td>
-     <td><input type="text" size="8" id="mix" value="0.4" /></td>
-   </tr>
+      <td>Mix : </td>
+      <td><input type="text" size="8" id="mix" value="0.4" /></td>
+    </tr>
   </table>
 
 </body>
