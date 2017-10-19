@@ -277,6 +277,19 @@
 
 <body>
 
+  <div class="select-box">
+    <form name="selbox">
+      <p>
+        <select id="music">
+  <option value="./cafe.mp3">cafe</option>
+  <option value="./sea.mp3">sea</option>
+  <option value="./work.mp3">work</option>
+  <option value="./party.mp3">party</option>
+  </select></p>
+    </form>
+    <button id="playsound" disabled class="playsound1">Play</button><br/>
+  </div>
+
   <div class="pure-g">
 
     <!-- Video area -->
@@ -341,18 +354,7 @@
   <div id="box" style="background: #fff; font-size: 18px;padding:40px 30px; text-align: center;">
     Drag file here to send to active connections.
   </div>
-  <div class="select-box">
-    <form name="selbox">
-      <p>
-        <select id="music">
-  <option value="./cafe.mp3">cafe</option>
-  <option value="./sea.mp3">sea</option>
-  <option value="./work.mp3">work</option>
-  <option value="./party.mp3">party</option>
-  </select></p>
-    </form>
-    <button id="playsound" disabled class="playsound1">Play</button><br/>
-  </div>
+
 
   <div class="container">
 
@@ -366,51 +368,51 @@
   <script src="music.js"></script>
   <script src="music2.js"></script>
   <script src="music3.js"></script>
-  
+
   <script type="text/javascript">
-  var audioctx = new AudioContext();
+    var audioctx = new AudioContext();
 
-  var buffer = null;
-  var src = null;
-  var input = audioctx.createGain();
-  var musics = document.getElementById("music");
-  var selectedItem = "./cafe.mp3";
+    var buffer = null;
+    var src = null;
+    var input = audioctx.createGain();
+    var musics = document.getElementById("music");
+    var selectedItem = "./cafe.mp3";
 
-  input.connect(audioctx.destination);
+    input.connect(audioctx.destination);
 
-  const LoadSample = (ctx, url) => {
-    fetch(url).then(response => {
-      return response.arrayBuffer();
-    }).then(arrayBuffer => {
-      ctx.decodeAudioData(arrayBuffer, (b) => {
-        buffer = b;
-      }, () => {});
-      document.querySelector("button#playsound").removeAttribute("disabled");
-    });
-  }
-  musics.onchange = function() {
-    selectedItem = this.options[this.selectedIndex];
-    console.log(selectedItem.value);
-    LoadSample(audioctx, selectedItem.value);
-  }
-</script>
-<script type="text/javascript">
-  document.querySelector("button#playsound").addEventListener("click", (event) => {
-    var label;
-    if (event.target.innerHTML == "Stop") {
-      src.stop(0);
-      label = "Start";
-    } else {
-      src = audioctx.createBufferSource();
-      src.buffer = buffer;
-      src.loop = true;
-      src.connect(input);
-      src.start(0);
-      label = "Stop";
+    const LoadSample = (ctx, url) => {
+      fetch(url).then(response => {
+        return response.arrayBuffer();
+      }).then(arrayBuffer => {
+        ctx.decodeAudioData(arrayBuffer, (b) => {
+          buffer = b;
+        }, () => {});
+        document.querySelector("button#playsound").removeAttribute("disabled");
+      });
     }
-    event.target.innerHTML = label;
-  });
-</script>
+    musics.onchange = function() {
+      selectedItem = this.options[this.selectedIndex];
+      console.log(selectedItem.value);
+      LoadSample(audioctx, selectedItem.value);
+    }
+  </script>
+  <script type="text/javascript">
+    document.querySelector("button#playsound").addEventListener("click", (event) => {
+      var label;
+      if (event.target.innerHTML == "Stop") {
+        src.stop(0);
+        label = "Start";
+      } else {
+        src = audioctx.createBufferSource();
+        src.buffer = buffer;
+        src.loop = true;
+        src.connect(input);
+        src.start(0);
+        label = "Stop";
+      }
+      event.target.innerHTML = label;
+    });
+  </script>
 </body>
 
 </html>
