@@ -8,6 +8,7 @@
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
   <script type="text/javascript" src="../key.js"></script>
+  <script type="text/javascript" src="speech.js"></script>
 </head>
 
 <script>
@@ -235,6 +236,14 @@
   <script src="music.js"></script>
   <script src="music2.js"></script>
   <script src="music3.js"></script>
+
+  <textarea id="result_text" cols="100" rows="10">
+      </textarea>
+  <br>
+  <textarea id="status" cols="100" rows="1">
+      </textarea>
+  <br>
+  <input type="button" onClick="vr_function();" value="音認開始">
 
   <script type="text/javascript">
     var audioctx = new AudioContext();
