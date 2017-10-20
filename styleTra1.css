@@ -74,3 +74,19 @@ transition: .4s;
 .musicButton > button:hover{
 background: #586b8f;
 }
+.speechBt{
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 14px;
+  color: #586b8f;
+  border-radius: 50%;
+  background: #fff;
+  transition: .4s;
+}
+.speechBt>span {
+  border-bottom: solid 2px #FFF;
+}
+
+.speechBt:hover {
+  background: #c84361;
+  color: #fff;
+}
