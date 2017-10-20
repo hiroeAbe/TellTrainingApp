@@ -1,0 +1,76 @@
+body {
+  border-top:solid 60px #ec6d71;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 70px;
+  color: #586b8f;
+  background-color: #ffed78;
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+}
+
+h2 {
+  border-bottom: dashed 2px #ec6d71;
+  /*線の種類（点線）2px 線色*/
+}
+
+.select-box select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-box select {
+  width: 80px;
+  padding: 8px 10px 10px 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  color: #586b8f;
+  border: solid 3px #586b8f;
+  border-radius: 0 0 0 0;
+  background: #eee;
+  background: url(arrow01.png) right 50% no-repeat, -webkit-linear-gradient(top, #fff 0%, #ffed78 100%);
+  background: url(arrow01.png) right 50% no-repeat, linear-gradient(to bottom, #fff 0%, #ffed78 100%);
+  background-size: 18px, 100%;
+}
+
+.playsound1 {
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 14px;
+  color: #586b8f;
+  padding:6px;
+  border-radius: 50%;
+  background: #fff;
+  transition: .4s;
+}
+
+.playsound1>span {
+  border-bottom: solid 2px #FFF;
+}
+
+.playsound1:hover {
+  background: #c84361;
+  color: #fff;
+}
+
+.musicButton > button{
+  display: inline-block;
+text-decoration: none;
+background: #ec6d71;
+color: #FFF;
+font-size: 13px;
+width: 60px;
+height: 60px;
+line-height: 60px;
+border-radius: 50%;
+text-align: center;
+vertical-align: middle;
+overflow: hidden;
+transition: .4s;
+}
+.musicButton > button:hover{
+background: #586b8f;
+}
