@@ -33,14 +33,14 @@ h1 {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  color: #addce4;
-  border: solid 2px #addce4;
+  color: #87cefa;
+  border: solid 2px #87cefa;
   border-radius: 3px;
   transition: .4s;
 }
 
 .buttonClass>#var1:hover {
-  background: #addce4;
+  background: #87cefa;
   color: white;
 }
 
