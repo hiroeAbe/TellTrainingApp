@@ -77,16 +77,18 @@ background: #586b8f;
 .speech > #speechBt{
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
   font-size: 14px;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
   color: #586b8f;
-  border-radius: 50%;
-  background: #fff;
+  border: solid 2px #586b8f;
+  border-radius: 3px;
   transition: .4s;
-}
-.speech > #speechBt >span {
-  border-bottom: solid 2px #FFF;
 }
 
 .speech > #speechBt:hover {
-  background: #c84361;
-  color: #fff;
+  background: #586b8f;
+  color: white;
 }
