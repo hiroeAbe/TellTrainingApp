@@ -1,5 +1,5 @@
 body {
-  border-top:solid 60px #addce4;
+  border-top:solid 60px #87cefa;
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 70px;
@@ -8,7 +8,7 @@ body {
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
 }
 h2 {
-  border-bottom: dashed 2px #addce4;
+  border-bottom: dashed 2px #87cefa;
   /*線の種類（点線）2px 線色*/
 }
 .select-box select {
@@ -57,7 +57,7 @@ h2 {
 .musicButton > button{
   display: inline-block;
 text-decoration: none;
-background: #addce4;
+background: #87cefa;
 color: #FFF;
 font-size: 13px;
 width: 60px;
