@@ -3,12 +3,54 @@
 <head>
   <meta charset="utf-8">
   <title>SkyWay - Tell Application</title>
-  <link rel="stylesheet" href="styleVideo2.css">
-  <link rel="stylesheet" href="styleTra2.css">
+  <link rel="stylesheet" href="styleVideo1.css">
+  <link rel="stylesheet" href="styleProt.css">
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
   <script type="text/javascript" src="../key.js"></script>
+  <script>
+    var flag_speech = 0;
 
+    function vr_function() {
+      window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+      var recognition = new webkitSpeechRecognition();
+      recognition.lang = 'ja';
+      recognition.interimResults = true;
+      recognition.continuous = true;
+
+      recognition.onsoundstart = function() {
+        document.getElementById('status').innerHTML = "認識中";
+      };
+      recognition.onnomatch = function() {
+        document.getElementById('status').innerHTML = "もう一度試してください";
+      };
+      recognition.onerror = function() {
+        document.getElementById('status').innerHTML = "エラー";
+        if (flag_speech == 0)
+          vr_function();
+      };
+      recognition.onsoundend = function() {
+        document.getElementById('status').innerHTML = "停止中";
+        vr_function();
+      };
+
+      recognition.onresult = function(event) {
+        var results = event.results;
+        for (var i = event.resultIndex; i < results.length; i++) {
+          if (results[i].isFinal) {
+            document.getElementById('result_text').innerHTML = results[i][0].transcript;
+            vr_function();
+          } else {
+            document.getElementById('result_text').innerHTML = "[途中経過] " + results[i][0].transcript;
+            flag_speech = 1;
+          }
+        }
+      }
+      flag_speech = 0;
+      document.getElementById('status').innerHTML = "start";
+      recognition.start();
+    }
+  </script>
 </head>
 
 <script>
@@ -164,18 +206,6 @@
 
 <body>
 
-  <div class="select-box">
-    <form name="selbox">
-      <p>
-        <select id="music">
-  <option value="./cafe.mp3">cafe</option>
-  <option value="./sea.mp3">sea</option>
-  <option value="./work.mp3">work</option>
-  <option value="./party.mp3">party</option>
-  </select></p>
-    </form>
-    <button id="playsound" disabled class="playsound1">Play</button><br/>
-  </div>
 
   <div class="pure-g">
 
@@ -187,7 +217,7 @@
 
     <!-- Steps -->
     <div class="pure-u-1-3">
-      <h2>Tell App -TrainingMode2-</h2>
+      <h2>Tell App -ProtType-</h2>
 
       <div class="select">
         <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
@@ -224,64 +254,17 @@
       </div>
     </div>
   </div>
-  <div class="container">
 
-    <div class="musicButton">
-      <button id="hotaru" disabled>Hotaru</button>
-      <button id="okan" disabled>Okan</button>
-      <button id="train" disabled>Train</button>
-    </div>
-
-  </div>
-  <script src="music.js"></script>
-  <script src="music2.js"></script>
-  <script src="music3.js"></script>
-
-
-  <script type="text/javascript">
-    var audioctx = new AudioContext();
-
-    var buffer = null;
-    var src = null;
-    var input = audioctx.createGain();
-    var musics = document.getElementById("music");
-    var selectedItem = "./cafe.mp3";
-
-    input.connect(audioctx.destination);
-
-    const LoadSample = (ctx, url) => {
-      fetch(url).then(response => {
-        return response.arrayBuffer();
-      }).then(arrayBuffer => {
-        ctx.decodeAudioData(arrayBuffer, (b) => {
-          buffer = b;
-        }, () => {});
-        document.querySelector("button#playsound").removeAttribute("disabled");
-      });
-    }
-    musics.onchange = function() {
-      selectedItem = this.options[this.selectedIndex];
-      console.log(selectedItem.value);
-      LoadSample(audioctx, selectedItem.value);
-    }
-  </script>
-  <script type="text/javascript">
-    document.querySelector("button#playsound").addEventListener("click", (event) => {
-      var label;
-      if (event.target.innerHTML == "Stop") {
-        src.stop(0);
-        label = "Start";
-      } else {
-        src = audioctx.createBufferSource();
-        src.buffer = buffer;
-        src.loop = true;
-        src.connect(input);
-        src.start(0);
-        label = "Stop";
-      }
-      event.target.innerHTML = label;
-    });
-  </script>
+  <textarea id="result_text" cols="60" rows="10">
+      </textarea>
+  <br>
+  <textarea id="status" cols="60" rows="1">
+      </textarea>
+  <br>
+  <div class="speech">
+  <input id='speechBt' type="button" onClick="vr_function();" value="音認開始">
+</div>
+  
 </body>
 
 </html>

@@ -1,0 +1,33 @@
+body {
+  border-top:solid 60px #00ff7f;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 70px;
+  color: #586b8f;
+  background-color: #ffed78;
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+}
+
+h2 {
+  border-bottom: dashed 2px #00ff7f;
+  /*線の種類（点線）2px 線色*/
+}
+
+.speech > #speechBt{
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 14px;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #586b8f;
+  border: solid 2px #586b8f;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.speech > #speechBt:hover {
+  background: #586b8f;
+  color: white;
+}

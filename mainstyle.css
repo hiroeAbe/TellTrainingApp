@@ -64,3 +64,24 @@ h1 {
   background: #ec6d71;
   color: white;
 }
+
+.buttonClass>#var3 {
+  font-size: 20px;
+  width: 120px;
+  height: 80px;
+  line-height: 60px;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #00ff7f;
+  border: solid 2px #00ff7f;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.buttonClass>#var3:hover {
+  background: #00ff7f;
+  color: white;
+}

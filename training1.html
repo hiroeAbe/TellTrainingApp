@@ -3,54 +3,12 @@
 <head>
   <meta charset="utf-8">
   <title>SkyWay - Tell Application</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleVideo1.css">
   <link rel="stylesheet" href="styleTra1.css">
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
   <script type="text/javascript" src="../key.js"></script>
-  <script>
-    var flag_speech = 0;
 
-    function vr_function() {
-      window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
-      var recognition = new webkitSpeechRecognition();
-      recognition.lang = 'ja';
-      recognition.interimResults = true;
-      recognition.continuous = true;
-
-      recognition.onsoundstart = function() {
-        document.getElementById('status').innerHTML = "認識中";
-      };
-      recognition.onnomatch = function() {
-        document.getElementById('status').innerHTML = "もう一度試してください";
-      };
-      recognition.onerror = function() {
-        document.getElementById('status').innerHTML = "エラー";
-        if (flag_speech == 0)
-          vr_function();
-      };
-      recognition.onsoundend = function() {
-        document.getElementById('status').innerHTML = "停止中";
-        vr_function();
-      };
-
-      recognition.onresult = function(event) {
-        var results = event.results;
-        for (var i = event.resultIndex; i < results.length; i++) {
-          if (results[i].isFinal) {
-            document.getElementById('result_text').innerHTML = results[i][0].transcript;
-            vr_function();
-          } else {
-            document.getElementById('result_text').innerHTML = "[途中経過] " + results[i][0].transcript;
-            flag_speech = 1;
-          }
-        }
-      }
-      flag_speech = 0;
-      document.getElementById('status').innerHTML = "start";
-      recognition.start();
-    }
-  </script>
 </head>
 
 <script>
@@ -279,15 +237,7 @@
   <script src="music2.js"></script>
   <script src="music3.js"></script>
 
-  <textarea id="result_text" cols="60" rows="10">
-      </textarea>
-  <br>
-  <textarea id="status" cols="60" rows="1">
-      </textarea>
-  <br>
-  <div class="speech">
-  <input id='speechBt' type="button" onClick="vr_function();" value="音認開始">
-</div>
+
   <script type="text/javascript">
     var audioctx = new AudioContext();
 
