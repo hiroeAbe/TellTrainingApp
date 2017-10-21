@@ -1,5 +1,5 @@
 body {
-  border-top:solid 60px #00ff7f;
+  border-top:solid 60px #7fffd4;
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 70px;
@@ -9,7 +9,7 @@ body {
 }
 
 h2 {
-  border-bottom: dashed 2px #00ff7f;
+  border-bottom: dashed 2px #7fffd4;
   /*線の種類（点線）2px 線色*/
 }
 

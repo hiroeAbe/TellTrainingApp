@@ -75,13 +75,13 @@ h1 {
   display: inline-block;
   padding: 0.3em 1em;
   text-decoration: none;
-  color: #00ff7f;
-  border: solid 2px #00ff7f;
+  color: #7fffd4;
+  border: solid 2px #7fffd4;
   border-radius: 3px;
   transition: .4s;
 }
 
 .buttonClass>#var3:hover {
-  background: #00ff7f;
+  background: #7fffd4;
   color: white;
 }
