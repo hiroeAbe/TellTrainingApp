@@ -45,9 +45,9 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
   background-color: #fff;
   border: double 3px #ec6d71;
   border-radius: 10px;/*角の丸み*/
-  -webkit-filter: blur(5px);
- filter: blur(5px);
- margin: -5px;
+  -webkit-filter: blur(2px);
+ filter: blur(2px);
+ margin: -2px;
 }
 
 #their-video {
