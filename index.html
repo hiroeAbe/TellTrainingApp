@@ -26,10 +26,7 @@
       $('#my-id').text(peer.id);
       step1();
     });
-    peer.on('connection', c => {
-      // Show connection when it is completely ready
-      c.on('open', () => connect(c));
-    });
+
     // Receiving a call
     peer.on('call', call => {
       // Answer the call automatically (instead of prompting user) for demo purposes
@@ -42,103 +39,7 @@
       // Return to step 2 if error occurs
       step2();
     });
-    // Prepare file drop box.
-    const box = $('#box');
-    box.on('dragenter', doNothing);
-    box.on('dragover', doNothing);
-    box.on('drop', e => {
-      e.originalEvent.preventDefault();
-      const [file] = e.originalEvent.dataTransfer.files;
-      eachActiveConnection((c, $c) => {
-        if (c.label === 'file') {
-          c.send(file);
-          $c.find('.messages').append('<div><span class="file">You sent a file.</span></div>');
-        }
-      });
-    });
 
-    function doNothing(e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    // Send a chat message to all active connections.
-    $('#send').on('submit', e => {
-      e.preventDefault();
-      // For each active connection, send the message.
-      const msg = $('#text').val();
-      eachActiveConnection((c, $c) => {
-        if (c.label === 'chat') {
-          c.send(msg);
-          $c.find('.messages').append('<div><span class="you">You: </span>' + msg +
-            '</div>');
-        }
-      });
-      $('#text').val('');
-      $('#text').focus();
-    });
-    // Handle a connection object.
-    function connect(c) {
-      // Handle a chat connection.
-      if (c.label === 'chat') {
-        const chatbox = $('<div></div>').addClass('connection').addClass('active').attr('id', c.remoteId);
-        const header = $('<h1></h1>').html('Chat with <strong>' + c.remoteId + '</strong>');
-        const messages = $('<div><em>Peer connected.</em></div>').addClass('messages');
-        chatbox.append(header);
-        chatbox.append(messages);
-        // Select connection handler.
-        chatbox.on('click', () => {
-          chatbox.toggleClass('active');
-        });
-
-        $('.filler').hide();
-        $('#connections').append(chatbox);
-
-        c.on('data', data => {
-          messages.append('<div><span class="peer">' + c.remoteId + '</span>: ' + data +
-            '</div>');
-        });
-
-        c.on('close', () => {
-          alert(c.remoteId + ' has left the chat.');
-          chatbox.remove();
-          if ($('.connection').length === 0) {
-            $('.filler').show();
-          }
-          delete connectedPeers[c.remoteId];
-        });
-      } else if (c.label === 'file') {
-        c.on('data', function(data) {
-          // If we're getting a file, create a URL for it.
-          let dataBlob;
-          if (data.constructor === ArrayBuffer) {
-            dataBlob = new Blob([new Uint8Array(data)]);
-          } else {
-            dataBlob = data;
-          }
-          const filename = dataBlob.name || 'file';
-          const url = URL.createObjectURL(dataBlob);
-          $('#' + c.remoteId).find('.messages').append('<div><span class="file">' +
-            c.remoteId + ' has sent you a <a target="_blank" href="' + url + '" download="' + filename + '">file</a>.</span></div>');
-        });
-      }
-      connectedPeers[c.remoteId] = 1;
-    }
-    // Goes through each active peer and calls FN on its connections.
-    function eachActiveConnection(fn) {
-      const actives = $('.active');
-      const checkedIds = {};
-      actives.each((_, el) => {
-        const peerId = $(el).attr('id');
-        if (!checkedIds[peerId]) {
-          const conns = peer.connections[peerId];
-          for (let i = 0, ii = conns.length; i < ii; i += 1) {
-            const conn = conns[i];
-            fn(conn, $(el));
-          }
-        }
-        checkedIds[peerId] = 1;
-      });
-    }
     $('#make-call').on('submit', e => {
       e.preventDefault();
       // Initiate a call!
@@ -158,20 +59,7 @@
       step1();
     });
 
-    /*peer.on('connection', c => {
-      // Show connection when it is completely ready
-      c.on('open', () => connect(c));
-      c.send('send');　
-      connect(c);
-    });
-    // Handle a connection object.
-    function connect(c) {
-      // Handle a chat connection.
-      c.on('data', data => {
-        console.log(data);
-      });
 
-    }*/
     // set up audio and video input selectors
     const audioSelect = $('#audioSource');
     const videoSelect = $('#videoSource');
@@ -293,10 +181,6 @@
   <div class="pure-g">
 
     <!-- Video area -->
-    <div class="pure-u-2-3" id="video-container">
-      <video id="their-video" autoplay playsinline></video>
-      <video id="my-video" muted="true" autoplay playsinline></video>
-    </div>
 
     <!-- Steps -->
     <div class="pure-u-1-3">
@@ -347,13 +231,6 @@
       <td><input type="text" size="8" id="mix" value="0.4" /></td>
     </tr>
   </table>
-  <form id="send">
-    <input type="text" id="text" placeholder="Enter message">
-    <input class="button" type="submit" value="Send to selected peers">
-  </form>
-  <div id="box" style="background: #fff; font-size: 18px;padding:40px 30px; text-align: center;">
-    Drag file here to send to active connections.
-  </div>
 
 
   <div class="container">
