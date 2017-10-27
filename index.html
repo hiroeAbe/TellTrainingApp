@@ -120,7 +120,7 @@
       navigator.mediaDevices.getUserMedia(constraints).then(stream => {
         $('#my-video').get(0).srcObject = stream;
         localStream = stream;
-        SpeechJammer.setSJ(stream);
+        SpeechJammer.setupSJ(stream);
         if (existingCall) {
           existingCall.replaceStream(stream);
           return;
