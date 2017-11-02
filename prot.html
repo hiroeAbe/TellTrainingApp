@@ -44,9 +44,14 @@
             document.getElementById('result_text').innerHTML = "[途中経過] " + results[i][0].transcript;
             flag_speech = 1;
             var word = document.getElementById('result_text').value;
-            var keyword = word.indexOf('明日');
-            if (keyword != -1) {
-               document.getElementById('keyword').innerHTML = "文字列見つかりました";
+            var memo1 = word.indexOf(document.getElementById('memo1').value);
+            var memo2 = word.indexOf(document.getElementById('memo2').value);
+
+            if (memo1 != -1) {
+               document.getElementById('keyword').innerHTML = "memo1見つかりました";
+            }
+            if (memo2 != -1) {
+               document.getElementById('keyword').innerHTML = "memo2見つかりました";
             }
           }
 
@@ -269,6 +274,10 @@
   <div class="speech">
     <input id='speechBt' type="button" onClick="vr_function();" value="音認開始">
   </div>
+<input type="text" id='memo1'>
+<input type="text" id='memo2'>
+
+
   <!-- Video area -->
   <div class="pure-u-2-3" id="video-container">
     <video id="their-video" autoplay playsinline></video>
