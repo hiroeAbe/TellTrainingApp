@@ -43,7 +43,7 @@
           } else {
             document.getElementById('result_text').innerHTML = "[途中経過] " + results[i][0].transcript;
             flag_speech = 1;
-            var word = document.getElementById('result_text').val();
+            var word = document.getElementById('result_text').value;
             var key = word.indexOf('明日');
             if (keyword != -1) {
                document.getElementById('keyword').innerHTML = "文字列見つかりました";
