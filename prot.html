@@ -44,7 +44,7 @@
             document.getElementById('result_text').innerHTML = "[途中経過] " + results[i][0].transcript;
             flag_speech = 1;
           }
-          var keyword = documet.getElementById('result_text').val().indexOf('明日');
+          var keyword = document.getElementById('result_text').val().indexOf('明日');
           if (keyword != -1) {
              document.getElementById('keyword').innerHTML = "文字列見つかりました";
           }
