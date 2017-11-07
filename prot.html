@@ -49,13 +49,23 @@
             flag_speech = 1;
             var word = document.getElementById('result_text').value;
             var memo1 = word.indexOf(document.getElementById('memo1').value);
-            if (memo1 != -1) {
-              document.getElementById('keyword').innerHTML = "memo1見つかりました";
-            }
+            var memo2 = word.indexOf(document.getElementById('memo2').value);
+            var memo3 = word.indexOf(document.getElementById('memo3').value);
 
-            var memo2 = word.indexOf(document.getElementById('memo1').value);
+            if (memo1 != -1) {
+              if(document.getElementById('memo1').value != ""){
+              document.getElementById('keyword').innerHTML = "memo1見つかりました";
+              }
+            }
             if (memo2 != -1) {
-              document.getElementById('keyword').innerHTML = "memo2見つかりました";
+              if(document.getElementById('memo2').value != ""){
+            document.getElementById('keyword').innerHTML = "memo2見つかりました";
+            }
+            }
+            if (memo3 != -1) {
+              if(document.getElementById('memo3').value != ""){
+              document.getElementById('keyword').innerHTML = "memo3見つかりました";
+              }
             }
           }
 
