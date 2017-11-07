@@ -85,7 +85,7 @@
             flag_speech = 1;
             var word = document.getElementById('result_text').value;
             var memo1 = word.indexOf(document.getElementById('memo1').value);
-            var memo2 = word.indexOf(mainCtrl().$scope.tasks.splice($index,1).value);
+            var memo2 = word.indexOf(document.getElementById('memo2').value);
 
             if (memo1 != -1) {
               document.getElementById('keyword').innerHTML = "memo1見つかりました";
@@ -318,24 +318,7 @@
   <input type="text" id='memo1'>
   <input type="text" id='memo2'>
 
-  <h1>なにはなす？</h1>
-  <div ng-controller="mainCtrl">
-    <p>話し終わったこと: {{ getDoneCount() }}個/ {{tasks.length}}個中
-      <!--<button ng-click="deleteDone()">削除</button> -->
-      <a href="#" class="bt-samp40" ng-click="deleteDone()">削除</a>
-    </p>
-    <ul>
-      <li ng-repeat="task in tasks">
-        <input type="checkbox" ng-model="task.done">
-        <span class="done-{{task.done}}">{{task.body}}</span>
-        <a href ng-click="tasks.splice($index,1)">[x]</a>
-      </li>
-    </ul>
-    <form ng-submit="addNew()">
-      <input type="text" ng-model="newTaskBody">
-      <input type="submit" value="add">
-    </form>
-  </div>
+
 
   <!-- Video area -->
   <div class="pure-u-2-3" id="video-container">
