@@ -85,7 +85,7 @@
             flag_speech = 1;
             var word = document.getElementById('result_text').value;
             var memo1 = word.indexOf(document.getElementById('memo1').value);
-            var memo2 = word.indexOf(mainCtrl($scope, $http).$scope.tasks.splice($index,1).value);
+            var memo2 = word.indexOf(mainCtrl().$scope.tasks.splice($index,1).value);
 
             if (memo1 != -1) {
               document.getElementById('keyword').innerHTML = "memo1見つかりました";
