@@ -84,12 +84,9 @@
             document.getElementById('result_text').innerHTML = "[途中経過] " + results[i][0].transcript;
             flag_speech = 1;
             var word = document.getElementById('result_text').value;
-            var memo1 = word.indexOf(document.getElementById('memo1').value);
-            var memo2 = word.indexOf({task.body});
+            var memo2 = word.indexOf(document.getElementById('memo1').value);
 
-            if (memo1 != -1) {
-              document.getElementById('keyword').innerHTML = "memo1見つかりました";
-            }
+
             if (memo2 != -1) {
               document.getElementById('keyword').innerHTML = "memo2見つかりました";
             }
@@ -329,6 +326,13 @@
       <input type="checkbox" ng-model="task.done">
         <span class="done-{{task.done}}">{{task.body}}</span>
         <a href ng-click="tasks.splice($index,1)">[x]</a>
+        <script>
+        var word = document.getElementById('result_text').value;
+        var memo1 = word.indexOf(task.body);
+        if (memo1 != -1) {
+          document.getElementById('keyword').innerHTML = "memo1見つかりました";
+        }
+        </script>
         </li>
         </ul>
         <form ng-submit="addNew()">
