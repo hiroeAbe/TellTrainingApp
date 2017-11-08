@@ -51,14 +51,14 @@
             var r=/[一-龠]+|[ぁ-ん]+|[ァ-ヴー]+|[a-zA-Z0-9\-]+|[ａ-ｚＡ-Ｚ０-９]+/g
 
             var str1 = document.getElementById('memo1').value
-            str1.match(r);
+            console.log(str1.match(r));
             var str2 = document.getElementById('memo2').value
-            str2.match(r);
+            console.log(str2.match(r));
             var str3 = document.getElementById('memo3').value
-            str3.match(r);
-            var memo1 = word.indexOf(str1.match(r));
-            var memo2 = word.indexOf(str2.match(r));
-            var memo3 = word.indexOf(str3.match(r));
+            console.log(str3.match(r));
+            var memo1 = word.indexOf(document.getElementById('memo1').value);
+            var memo2 = word.indexOf(document.getElementById('memo2').value);
+            var memo3 = word.indexOf(document.getElementById('memo3').value);
 
             if (memo1 != -1) {
               if(document.getElementById('memo1').value != ""){
