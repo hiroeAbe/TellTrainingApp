@@ -28,28 +28,28 @@ h2 {
 }
 
 /*  DEMO 01 CHECKBOX */
-.demo1 .label_list:nth-of-type(1) label input[type="checkbox"] + span::before {
+#demo1 .label_list:nth-of-type(1) label input[type="checkbox"] + span::before {
   border-color: #00acc1;
 }
-.demo1 .label_list:nth-of-type(1) label input[type="checkbox"]:checked + span::before {
+#demo1 .label_list:nth-of-type(1) label input[type="checkbox"]:checked + span::before {
   background-color: #00acc1;
 }
-.demo1 .label_list:nth-of-type(2) label input[type="checkbox"] + span::before {
+#demo1 .label_list:nth-of-type(2) label input[type="checkbox"] + span::before {
   border-color: #ec407a;
 }
-.demo1 .label_list:nth-of-type(2) label input[type="checkbox"]:checked + span::before {
+#demo1 .label_list:nth-of-type(2) label input[type="checkbox"]:checked + span::before {
   background-color: #ec407a;
 }
-.demo1 label span {
+#demo1 label span {
   display: inline-block;
 }
-.demo1 label input[type="checkbox"] {
+#demo1 label input[type="checkbox"] {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-.demo1 label input[type="checkbox"] + span::before, .demo1 label input[type="checkbox"] + span::after {
+#demo1 label input[type="checkbox"] + span::before, .demo1 label input[type="checkbox"] + span::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -57,7 +57,7 @@ h2 {
   content: '';
   box-sizing: border-box;
 }
-.demo1 label input[type="checkbox"] + span::before {
+#demo1 label input[type="checkbox"] + span::before {
   z-index: 0;
   background-color: transparent;
   width: 22px;
@@ -65,16 +65,16 @@ h2 {
   border: 2px #616161 solid;
   border-radius: 5px;
 }
-.demo1 label input[type="checkbox"] + span::after {
+#demo1 label input[type="checkbox"] + span::after {
   z-index: 1;
   margin: 5px 8px;
   width: 6px;
   height: 9px;
 }
-.demo1 label input[type="checkbox"]:checked + span::before {
+#demo1 label input[type="checkbox"]:checked + span::before {
   background-color: #616161;
 }
-.demo1 label input[type="checkbox"]:checked + span::after {
+#demo1 label input[type="checkbox"]:checked + span::after {
   border: 2px solid #fff;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
