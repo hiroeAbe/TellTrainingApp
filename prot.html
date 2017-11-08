@@ -48,14 +48,7 @@
             document.getElementById('result_text').innerHTML = "[途中経過] " + results[i][0].transcript;
             flag_speech = 1;
             var word = document.getElementById('result_text').value;
-            var r=/[一-龠]+|[ぁ-ん]+|[ァ-ヴー]+|[a-zA-Z0-9\-]+|[ａ-ｚＡ-Ｚ０-９]+/g
-
-            var str1 = document.getElementById('memo1').value
-            console.log(str1.match(r));
-            var str2 = document.getElementById('memo2').value
-            console.log(str2.match(r));
-            var str3 = document.getElementById('memo3').value
-            console.log(str3.match(r));
+            
             var memo1 = word.indexOf(document.getElementById('memo1').value);
             var memo2 = word.indexOf(document.getElementById('memo2').value);
             var memo3 = word.indexOf(document.getElementById('memo3').value);
