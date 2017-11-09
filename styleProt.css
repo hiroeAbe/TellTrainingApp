@@ -79,6 +79,6 @@ input[type=checkbox] {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-input[type=checkbox]:checked + .check_css:before {
+input[type=checkbox]:checked + .memo:before {
   opacity: 1;
 }
