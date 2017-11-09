@@ -56,17 +56,17 @@
             var memo3 = word.indexOf(document.getElementById('memo3').value);
 
             if (memo1 != -1) {
-              if(document.getElementById('memo1').value != ""){
-              document.getElementById('memo1').style.color = "red";
+              if (document.getElementById('memo1').value != "") {
+                document.getElementById('memo1').style.color = "red";
               }
             }
             if (memo2 != -1) {
-              if(document.getElementById('memo2').value != ""){
-              document.getElementById('memo2').style.color = "red";
-            }
+              if (document.getElementById('memo2').value != "") {
+                document.getElementById('memo2').style.color = "red";
+              }
             }
             if (memo3 != -1) {
-              if(document.getElementById('memo3').value != ""){
+              if (document.getElementById('memo3').value != "") {
                 document.getElementById('memo3').style.color = "red";
 
               }
@@ -280,18 +280,26 @@
       </div>
     </div>
   </div>
-<h3>MEMO</h3>
-<div class="pretty p-icon p-round p-tada">
-        <input type="checkbox" />
-        <div class="state p-primary-o">
-            <i class="icon mdi mdi-heart"></i>
-            <label>Good</label>
-        </div>
+  <h3>MEMO</h3>
+  <div class="pretty p-icon p-round p-tada">
+    <input type="checkbox" />
+    <div class="state p-primary-o">
+      <i class="icon mdi mdi-heart"></i>
+      <input type="text" id='memo1'><br>
     </div>
-  <input type="checkbox" id="demo1"><input type="text" id='memo1'><br>
-  <input type="checkbox" id="demo1"><input type="text" id='memo2'><br>
-  <input type="checkbox" id="demo1"><input type="text" id='memo3'><br>
-  <br>
+    <input type="checkbox" />
+    <div class="state p-primary-o">
+      <i class="icon mdi mdi-heart"></i>
+      <input type="text" id='memo2'><br>
+    </div>
+
+    <input type="checkbox" />
+    <div class="state p-primary-o">
+      <i class="icon mdi mdi-heart"></i>
+      <input type="text" id='memo3'><br>
+    </div>
+    <br>
+  </div>
   <textarea id="result_text" cols="60" rows="10">
       </textarea>
   <br>
