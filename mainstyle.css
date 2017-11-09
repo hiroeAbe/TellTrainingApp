@@ -1,8 +1,9 @@
 body {
   color: #586b8f;
-  border-left: 60px;
-  border-right: 60px;
   border-top:solid 80px #586b8f;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 70px;
   background-color: #fff;
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
 }
@@ -140,4 +141,12 @@ input[type="checkbox"] {
 	    -ms-transform: translate3d(0, 0, 0);
 	     -o-transform: translate3d(0, 0, 0);
 	        transform: translate3d(0, 0, 0);
+}
+
+#bar1 {
+  font-size: 20px;
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  color: #fff;
+  border:none;
+  background:none; 
 }
