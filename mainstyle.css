@@ -1,21 +1,17 @@
 body {
-  padding-left: 60px;
-  padding-right: 60px;
   color: #586b8f;
-  border-bottom:solid 60px #586b8f;
+  padding-bottom:solid 100px #586b8f;
   background-color: #fff;
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
 }
 
-h1 {
+p > #a{
+  font-size: 120px;
+  text-align: center;
   color: #364e96;
   /*文字色*/
   padding: 0.5em 0;
   /*上下の余白*/
-  border-top: solid 3px #364e96;
-  /*上線*/
-  border-bottom: solid 3px #364e96;
-  /*下線*/
 }
 
 .buttonClass{
