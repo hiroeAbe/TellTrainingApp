@@ -2,7 +2,7 @@ body {
   color: #586b8f;
   border-left: 60px;
   border-right: 60px;
-  bottom:solid 100px #586b8f;
+  border-top:solid 80px #586b8f;
   background-color: #fff;
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
 }
