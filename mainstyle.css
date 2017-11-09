@@ -45,7 +45,7 @@ input[type="checkbox"] {
 	position: absolute;
 	top: 50%; left: 0;
 	margin-top: -1.5px;
-  background-image: url(phone.png);
+  background-image: url("phone.png");
 	-webkit-transition: all .25s ease-in-out 0s;
 	   -moz-transition: all .25s ease-in-out 0s;
 	    -ms-transition: all .25s ease-in-out 0s;
