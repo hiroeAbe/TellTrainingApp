@@ -143,10 +143,10 @@ input[type="checkbox"] {
 	        transform: translate3d(0, 0, 0);
 }
 
-#bar1 {
+#var1 {
   font-size: 20px;
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
   color: #fff;
   border:none;
-  background:none; 
+  background:none;
 }
