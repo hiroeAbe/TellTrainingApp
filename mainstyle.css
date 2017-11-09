@@ -2,14 +2,15 @@ body {
   color: #586b8f;
   border-left: 60px;
   border-right: 60px;
-  border-bottom:solid 100px #586b8f;
+  bottom:solid 100px #586b8f;
   background-color: #fff;
   font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
 }
 
 a{
-  font-size: 120px;
+  font-size: 100px;
   text-align: center;
+  margin: auto;
   color: #364e96;
   /*文字色*/
   padding: 0.5em 0;
