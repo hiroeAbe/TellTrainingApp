@@ -11,11 +11,9 @@ body {
 a{
   font-size: 100px;
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
   color: #364e96;
-  /*文字色*/
-  padding: 0.5em 0;
-  /*上下の余白*/
+
 }
 
 /* チェックボックスを非表示にする */
