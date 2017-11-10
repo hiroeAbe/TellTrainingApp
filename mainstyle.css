@@ -28,9 +28,9 @@ input[type="checkbox"] {
 #checkbox-menu label {
 	display: block;
 	position: absolute;
-	top: 0;
-	width: 48px;
-	height: 48px;
+	top: 30px;
+	width: 64px;
+	height: 64px;
 	cursor: pointer;
 	-webkit-transition: all .25s ease-in-out 0s;
 	   -moz-transition: all .25s ease-in-out 0s;
@@ -44,9 +44,7 @@ input[type="checkbox"] {
 	position: absolute;
 	top: 50%; left: 0;
 	margin-top: -1.5px;
-  width: 100%;
-  	height: 3px;
-  	background: #19283C;
+  background-image: url("phone.png");
 	-webkit-transition: all .25s ease-in-out 0s;
 	   -moz-transition: all .25s ease-in-out 0s;
 	    -ms-transition: all .25s ease-in-out 0s;
@@ -60,9 +58,7 @@ input[type="checkbox"] {
 	top: 0; left: 50%;
 	margin-left: -1.5px;
 	bottom: 0;
-	width: 3px;
-	height: 100%;
-	background: #19283C;
+  background-image: url("phone.png");
 	-webkit-transition: all .25s ease-in-out 0s;
 	   -moz-transition: all .25s ease-in-out 0s;
 	    -ms-transition: all .25s ease-in-out 0s;
@@ -70,7 +66,7 @@ input[type="checkbox"] {
 	        transition: all .25s ease-in-out 0s;
 }
 #checkbox-menu input[type="checkbox"]:checked + label {
-  background-image: url("phone.png");
+  background-image: url("brackP.png");
 	-webkit-transform: rotate(45deg);
 	   -moz-transform: rotate(45deg);
 	    -ms-transform: rotate(45deg);
@@ -79,7 +75,7 @@ input[type="checkbox"] {
 }
 #checkbox-menu input[type="checkbox"]:checked + label:before,
 #checkbox-menu input[type="checkbox"]:checked + label:after {
-	background: #B21D2D;
+  background-image: url("redP.png");
 }
 /* リストのデザイン */
 #list {
