@@ -76,7 +76,6 @@ input[type="checkbox"] {
 }
 #checkbox-menu input[type="checkbox"]:checked + label:before,
 #checkbox-menu input[type="checkbox"]:checked + label:after {
-  background-image: url("redP.png");
 }
 /* リストのデザイン */
 #list {
@@ -146,7 +145,6 @@ input[type="checkbox"] {
   background:none;
 }
 .buttonClass{
-  top:100px;
   text-align: center;
 }
 #var2{
