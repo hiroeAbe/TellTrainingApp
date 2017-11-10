@@ -40,7 +40,7 @@ input[type="checkbox"] {
 	        transition: all .25s ease-in-out 0s;
 }
 #checkbox-menu label:hover{
-  background-image: url("redP.png");
+  background-image: url("brackP.png");
 }
 #checkbox-menu label:before {
 	content: "";
