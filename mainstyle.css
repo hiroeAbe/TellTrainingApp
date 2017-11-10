@@ -146,16 +146,17 @@ input[type="checkbox"] {
   background:none;
 }
 .buttonClass{
+  top:80px;
   text-align: center;
 }
 #var2{
   display: inline-block;
     text-decoration: none;
     color: #586b8f;
-    font-size: 12px;
+    font-size: 16px;
     width: 100px;
     height: 100px;
-    line-height: 100px;
+    line-height: 90px;
     border-radius: 50%;
     border: double 4px #586b8f;
     text-align: center;
