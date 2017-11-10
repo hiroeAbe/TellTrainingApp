@@ -66,21 +66,22 @@ input[type="checkbox"] {
 	        transition: all .25s ease-in-out 0s;
 }
 #checkbox-menu input[type="checkbox"]:checked + label {
-  background-image: url("brackP.png");
 	-webkit-transform: rotate(45deg);
 	   -moz-transform: rotate(45deg);
 	    -ms-transform: rotate(45deg);
 	     -o-transform: rotate(45deg);
 	        transform: rotate(45deg);
 }
-#checkbox-menu input[type="checkbox"]:checked + label:before,
+#checkbox-menu input[type="checkbox"]:checked + label:before{
+  background-image: url("brackP.png");
+  },
 #checkbox-menu input[type="checkbox"]:checked + label:after {
   background-image: url("redP.png");
 }
 /* リストのデザイン */
 #list {
 	position: absolute;
-	top: 70px; left: 50%;
+	top: 100px; left: 50%;
 	margin-left: -150px;
 	width: 300px;
 	height: auto;
