@@ -32,6 +32,7 @@ input[type="checkbox"] {
 	width: 64px;
 	height: 64px;
 	cursor: pointer;
+  background-image: url("phone.png");
 	-webkit-transition: all .25s ease-in-out 0s;
 	   -moz-transition: all .25s ease-in-out 0s;
 	    -ms-transition: all .25s ease-in-out 0s;
@@ -44,7 +45,6 @@ input[type="checkbox"] {
 	position: absolute;
 	top: 50%; left: 0;
 	margin-top: -1.5px;
-  background-image: url("phone.png");
 	-webkit-transition: all .25s ease-in-out 0s;
 	   -moz-transition: all .25s ease-in-out 0s;
 	    -ms-transition: all .25s ease-in-out 0s;
@@ -58,7 +58,6 @@ input[type="checkbox"] {
 	top: 0; left: 50%;
 	margin-left: -1.5px;
 	bottom: 0;
-  background-image: url("phone.png");
 	-webkit-transition: all .25s ease-in-out 0s;
 	   -moz-transition: all .25s ease-in-out 0s;
 	    -ms-transition: all .25s ease-in-out 0s;
@@ -72,9 +71,7 @@ input[type="checkbox"] {
 	     -o-transform: rotate(45deg);
 	        transform: rotate(45deg);
 }
-#checkbox-menu input[type="checkbox"]:checked + label:before{
-  background-image: url("brackP.png");
-  },
+#checkbox-menu input[type="checkbox"]:checked + label:before,
 #checkbox-menu input[type="checkbox"]:checked + label:after {
   background-image: url("redP.png");
 }
