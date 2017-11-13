@@ -18,7 +18,7 @@
     text-decoration: line-through;
   }
 
-  .addBt{
+  .addBt {
     font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
     font-size: 15px;
     vertical-align: middle;
@@ -31,11 +31,16 @@
     border-radius: 3px;
     transition: .4s;
   }
+
   .addBt:hover {
     background: #586b8f;
     color: white;
   }
-  audio{width: 220px; height: 38px;}
+
+  audio {
+    width: auto;
+    height: 38px;
+  }
 </style>
 
 <script>
@@ -234,39 +239,18 @@
     //mediaオブジェクトの取得 ▼
     var media = document.getElementById("msc");
     media.volume = 1.0;
-
   </script>
-<table>
+  <table>
     <tr>
-      <td><h3>SpeechJammer :</h3></td>
+      <td>
+        <h3>SpeechJammer :</h3></td>
       <td><input id="speechjammer" type="checkbox" /></td>
     </tr>
     <tr>
-      <td><h3>Mix :</h3></td>
+      <td>Mix :</td>
       <td><input type="text" size="6" id="mix" value="0.4" /></td>
     </tr>
-</table>
-<br>
-<div class="memoClass">
-<h3>なにはなす？</h3>
-<div ng-controller="mainCtrl">
-  <p>話し終わったこと: {{ getDoneCount() }}個/ {{tasks.length}}個中
-    <!--<button ng-click="deleteDone()">削除</button> -->
-    <a href="#" class="bt-samp40" ng-click="deleteDone()">削除</a>
-  </p>
-  <ul>
-    <li ng-repeat="task in tasks">
-      <input type="checkbox" ng-model="task.done">
-      <span class="done-{{task.done}}">{{task.body}}</span>
-      <a href ng-click="tasks.splice($index,1)">[x]</a>
-    </li>
-  </ul>
-  <form ng-submit="addNew()">
-    <input type="text" ng-model="newTaskBody">
-    <input type="submit" value="Add" class="addBt">
-  </form>
-</div>
-</div>
+  </table>
   <div class="container">
 
     <div class="musicButton">
@@ -281,9 +265,31 @@
   <script src="music3.js"></script>
 
   <br>
-    <audio id="msc" controls loop> ▼
-  <source src="sample.mp3">
-  </audio>
+  <audio id="msc" controls loop> ▼
+<source src="sample.mp3">
+</audio>
+  <br>
+  <div class="memoClass">
+    <h3>なにはなす？</h3>
+    <div ng-controller="mainCtrl">
+      <p>話し終わったこと: {{ getDoneCount() }}個/ {{tasks.length}}個中
+        <!--<button ng-click="deleteDone()">削除</button> -->
+        <a href="#" class="bt-samp40" ng-click="deleteDone()">削除</a>
+      </p>
+      <ul>
+        <li ng-repeat="task in tasks">
+          <input type="checkbox" ng-model="task.done">
+          <span class="done-{{task.done}}">{{task.body}}</span>
+          <a href ng-click="tasks.splice($index,1)">[x]</a>
+        </li>
+      </ul>
+      <form ng-submit="addNew()">
+        <input type="text" ng-model="newTaskBody">
+        <input type="submit" value="Add" class="addBt">
+      </form>
+    </div>
+  </div>
+
   <br>
   <!-- Video area -->
   <div class="pure-u-2-3" id="video-container">
