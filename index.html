@@ -46,6 +46,23 @@
     -webkit-transform: translateY(2px);
     transform: translateY(2px);
   }
+  .addBt{
+    font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    padding: 0.3em 1em;
+    text-decoration: none;
+    color: #586b8f;
+    border: solid 2px #586b8f;
+    border-radius: 3px;
+    transition: .4s;
+  }
+  .addBt:hover {
+    background: #586b8f;
+    color: white;
+  }
 </style>
 
 <script>
@@ -240,17 +257,13 @@
     </div>
   </div>
 
-  <audio id="msc" controls loop> ▼
-<source src="sample.mp3">
-</audio>
-  <br>
-
   <script>
     //mediaオブジェクトの取得 ▼
     var media = document.getElementById("msc");
     media.volume = 1.0;
 
   </script>
+  <div class="memoClass">
   <h3>なにはなす？</h3>
   <div ng-controller="mainCtrl">
     <p>話し終わったこと: {{ getDoneCount() }}個/ {{tasks.length}}個中
@@ -266,9 +279,10 @@
     </ul>
     <form ng-submit="addNew()">
       <input type="text" ng-model="newTaskBody">
-      <input type="submit" value="add">
+      <input type="submit" value="add" class="addBt">
     </form>
   </div>
+</div>
   <table>
     <tr>
       <td>SpeechJammer :</td>
@@ -294,6 +308,11 @@
   <script src="music2.js"></script>
   <script src="music3.js"></script>
 
+  <br>
+    <audio id="msc" controls loop> ▼
+  <source src="sample.mp3">
+  </audio>
+  <br>
   <!-- Video area -->
   <div class="pure-u-2-3" id="video-container">
     <video id="their-video" autoplay playsinline></video>

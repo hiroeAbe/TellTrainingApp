@@ -64,7 +64,9 @@ width: 20%;
   background: #c84361;
   color: #fff;
 }
-
+.memoClass{
+  text-align:right;
+}
 .musicButton > button{
   display: inline-block;
 text-decoration: none;
