@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>SkyWay - Tell Application</title>
-  <link rel="stylesheet" href="styleVideo1.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="styleTra1.css">
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
@@ -209,20 +209,33 @@
     </div>
   </div>
 
-
-  <!-- Video area -->
-  <div class="pure-u-2-3" id="video-container">
-    <video id="their-video" autoplay playsinline></video>
-    <video id="my-video" muted="true" autoplay playsinline></video>
-  </div>
 <br>
   <audio id="msc" controls loop> ▼
 <source src="sample.mp3">
 </audio>
 <br>
-<button type="button" onclick="fadein()">フェードイン</button> ▼
-<button type="button" onclick="fadeout()">フェードアウト</button>
+<button type="button" onclick="fadein()" id="fBt">フェードイン</button> ▼
+<button type="button" onclick="fadeout()" id="fBt">フェードアウト</button>
+<style>
+#fBt{
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 14px;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #586b8f;
+  border: solid 2px #586b8f;
+  border-radius: 3px;
+  transition: .4s;
+}
 
+#fBt:hover {
+  background: #586b8f;
+  color: white;
+}
+</style>
 <script>
 //mediaオブジェクトの取得 ▼
 var media = document.getElementById("msc");
@@ -250,6 +263,11 @@ function fadeout()
   }
 }
 </script>
+<!-- Video area -->
+<div class="pure-u-2-3" id="video-container">
+  <video id="their-video" autoplay playsinline></video>
+  <video id="my-video" muted="true" autoplay playsinline></video>
+</div>
 </body>
 
 </html>
