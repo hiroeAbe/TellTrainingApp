@@ -214,8 +214,29 @@
 <source src="sample.mp3">
 </audio>
 <br>
-<button type="button" onclick="fadein()">フェードイン</button> ▼
-<button type="button" onclick="fadeout()">フェードアウト</button>
+<br>
+<button type="button" onclick="fadein()" class="fBt">フェードイン</button>
+<button type="button" onclick="fadeout()" class="fBt">フェードアウト</button>
+<style>
+.fBt{
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 14px;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #586b8f;
+  border: solid 2px #586b8f;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.fBt:hover {
+  background: #586b8f;
+  color: white;
+}
+</style>
 
 <script>
 //mediaオブジェクトの取得 ▼
