@@ -40,3 +40,15 @@ width: 20%;
   background: #586b8f;
   color: white;
 }
+.memoBox > #memo1{
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 15px;
+}
+.memoBox > #memo2{
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 15px;
+}
+.memoBox > #memo3{
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 15px;
+}
