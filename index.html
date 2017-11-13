@@ -199,27 +199,10 @@
 </script>
 
 <body>
-
-  <div class="select-box">
-    <form name="selbox">
-      <p>
-        <select id="music">
-  <option value="./cafe.mp3">cafe</option>
-  <option value="./sea.mp3">sea</option>
-  <option value="./work.mp3">work</option>
-  <option value="./party.mp3">party</option>
-  </select></p>
-    </form>
-    <button id="playsound" disabled class="playsound1">Play</button><br/>
-  </div>
-
   <div class="pure-g">
-
-
-
     <!-- Steps -->
     <div class="pure-u-1-3">
-      <h2>AssistMode</h2>
+      <h1>AssistMode</h1>
 
       <div class="select">
         <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
@@ -256,6 +239,18 @@
       </div>
     </div>
   </div>
+
+  <audio id="msc" controls loop> ▼
+<source src="sample.mp3">
+</audio>
+  <br>
+
+  <script>
+    //mediaオブジェクトの取得 ▼
+    var media = document.getElementById("msc");
+    media.volume = 1.0;
+
+  </script>
   <h3>なにはなす？</h3>
   <div ng-controller="mainCtrl">
     <p>話し終わったこと: {{ getDoneCount() }}個/ {{tasks.length}}個中
