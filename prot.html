@@ -55,17 +55,20 @@
             if (memo1 != -1) {
               if (document.getElementById('memo1').value != "") {
                 document.getElementById('memo1').style.color = "orange";
+                document.getElementById('label1').innerHTML = "Clear!";
               }
             }
             if (memo2 != -1) {
               if (document.getElementById('memo2').value != "") {
                 document.getElementById('memo2').style.color = "orange";
+                document.getElementById('label2').innerHTML = "Clear!";
+
               }
             }
             if (memo3 != -1) {
               if (document.getElementById('memo3').value != "") {
                 document.getElementById('memo3').style.color = "orange";
-
+                document.getElementById('label3').innerHTML = "Clear!";
               }
             }
           }
@@ -284,14 +287,17 @@
       <tr>
         <td><input type="checkbox" id='memoCheck1'></td>
         <td><input type="text" id='memo1'></td>
+        <td><label for='memo1'id='label1'></label></td>
       </tr>
       <tr>
         <td><input type="checkbox" id='memoCheck2'></td>
         <td><input type="text" id='memo2'></td>
+        <td><label for='memo2' id='label2'></label></td>
       </tr>
       <tr>
         <td><input type="checkbox" id='memoCheck3'></td>
         <td><input type="text" id='memo3'></td>
+        <td><label for='memo3' id='label3'></label></td>
       </tr>
 
     </table>
