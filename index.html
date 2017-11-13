@@ -35,7 +35,7 @@
     background: #586b8f;
     color: white;
   }
-  audio{width: 200px; height: 40px;}
+  audio{width: 220px; height: 38px;}
 </style>
 
 <script>
@@ -236,26 +236,6 @@
     media.volume = 1.0;
 
   </script>
-  <div class="memoClass">
-  <h3>なにはなす？</h3>
-  <div ng-controller="mainCtrl">
-    <p>話し終わったこと: {{ getDoneCount() }}個/ {{tasks.length}}個中
-      <!--<button ng-click="deleteDone()">削除</button> -->
-      <a href="#" class="bt-samp40" ng-click="deleteDone()">削除</a>
-    </p>
-    <ul>
-      <li ng-repeat="task in tasks">
-        <input type="checkbox" ng-model="task.done">
-        <span class="done-{{task.done}}">{{task.body}}</span>
-        <a href ng-click="tasks.splice($index,1)">[x]</a>
-      </li>
-    </ul>
-    <form ng-submit="addNew()">
-      <input type="text" ng-model="newTaskBody">
-      <input type="submit" value="Add" class="addBt">
-    </form>
-  </div>
-</div>
 <table>
     <tr>
       <td><h3>SpeechJammer :</h3></td>
@@ -267,7 +247,26 @@
     </tr>
 </table>
 <br>
-
+<div class="memoClass">
+<h3>なにはなす？</h3>
+<div ng-controller="mainCtrl">
+  <p>話し終わったこと: {{ getDoneCount() }}個/ {{tasks.length}}個中
+    <!--<button ng-click="deleteDone()">削除</button> -->
+    <a href="#" class="bt-samp40" ng-click="deleteDone()">削除</a>
+  </p>
+  <ul>
+    <li ng-repeat="task in tasks">
+      <input type="checkbox" ng-model="task.done">
+      <span class="done-{{task.done}}">{{task.body}}</span>
+      <a href ng-click="tasks.splice($index,1)">[x]</a>
+    </li>
+  </ul>
+  <form ng-submit="addNew()">
+    <input type="text" ng-model="newTaskBody">
+    <input type="submit" value="Add" class="addBt">
+  </form>
+</div>
+</div>
   <div class="container">
 
     <div class="musicButton">
