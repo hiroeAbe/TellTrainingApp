@@ -51,25 +51,35 @@
             var memo1 = word.indexOf(document.getElementById('memo1').value);
             var memo2 = word.indexOf(document.getElementById('memo2').value);
             var memo3 = word.indexOf(document.getElementById('memo3').value);
-
+            var count = 0;
             if (memo1 != -1) {
               if (document.getElementById('memo1').value != "") {
                 document.getElementById('memo1').style.color = "orange";
                 document.getElementById('label1').innerHTML = "Clear!";
+                count++;
               }
             }
             if (memo2 != -1) {
               if (document.getElementById('memo2').value != "") {
                 document.getElementById('memo2').style.color = "orange";
                 document.getElementById('label2').innerHTML = "Clear!";
-
+                count++;
               }
             }
             if (memo3 != -1) {
               if (document.getElementById('memo3').value != "") {
                 document.getElementById('memo3').style.color = "orange";
                 document.getElementById('label3').innerHTML = "Clear!";
+                count++;
               }
+            }
+            if(count == 1){
+              document.tree.src = "tree_seichou04.png";
+            }else if(count == 2){
+              document.tree.src = "tree_seichou07.png";
+            }else if(count == 3){
+              document.tree.src = "tree_seichou09.png";
+
             }
           }
 
@@ -301,6 +311,7 @@
       </tr>
 
     </table>
+    <img src="tree_seichou02.png" width="300" height="400" name="tree">
   </div>
   <br>
   <textarea id="result_text" cols="40" rows="6">
