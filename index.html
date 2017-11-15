@@ -270,6 +270,28 @@
 <source src="sample.mp3">
 </audio>
   <br>
+  <img src="tori05.png" name="tori">
+  <div id="comment"></div>
+
+  <script type="text/javascript">
+  img = new Array("tori05.png","tori05_2.png","tori05_3.png","tori05_4.png","tori05_5.png");
+  com = new Array("なにもない","イクラ","エビ","マグロ","トロ"); 
+  count = -1;
+  imgTimer();
+
+  function imgTimer() {
+  	//画像番号
+  	count++;
+  	//画像の枚数確認
+  	if (count == img.length) count = 0;
+  	//画像出力
+  	document.sushi.src = img[count];
+  	//コメント出力
+  	document.getElementById("comment").innerHTML = com[count]; //*3
+  	//次のタイマー呼びだし
+  	setTimeout("imgTimer()",30000);
+  }
+  </script>
   <div class="memoClass">
     <h3>なにはなす？</h3>
     <div ng-controller="mainCtrl">
