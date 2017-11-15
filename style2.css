@@ -85,3 +85,6 @@ transition: .4s;
 .musicButton > button:hover{
 background: #586b8f;
 }
+.tori{
+  text-align: right;
+}
