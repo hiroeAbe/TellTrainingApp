@@ -78,12 +78,12 @@
                 count3 = 1;
               }
             }
-            if(count1 != 0 || count2 != 0 || count3 != 0){
-              document.tree.src = "tree_seichou04.png";
-            }else if(count1 != 0 && count2 != 0){
-              document.tree.src = "tree_seichou07.png";
-            }else if(count1 != 0 && count2 != 0 && count3 != 0){
+            if(count1 != 0 && count2 != 0 && count3 != 0){
               document.tree.src = "tree_seichou09.png";
+            }else if((count1 != 0 && count2 != 0) || (count1 != 0 && count3 != 0) || (count2 != 0 && count3 != 0)){
+              document.tree.src = "tree_seichou07.png";
+            }else if(count1 != 0 || count2 != 0 || count3 != 0){
+              document.tree.src = "tree_seichou04.png";
 
             }
           }
