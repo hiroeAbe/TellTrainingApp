@@ -39,6 +39,7 @@
 
       recognition.onresult = function(event) {
         var results = event.results;
+        var count = 0;
         for (var i = event.resultIndex; i < results.length; i++) {
           if (results[i].isFinal) {
             document.getElementById('result_text').innerHTML = results[i][0].transcript;
@@ -51,7 +52,6 @@
             var memo1 = word.indexOf(document.getElementById('memo1').value);
             var memo2 = word.indexOf(document.getElementById('memo2').value);
             var memo3 = word.indexOf(document.getElementById('memo3').value);
-            var count = 0;
             if (memo1 != -1) {
               if (document.getElementById('memo1').value != "") {
                 document.getElementById('memo1').style.color = "orange";
