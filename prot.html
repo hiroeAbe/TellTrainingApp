@@ -13,7 +13,9 @@
 
   <script>
     var flag_speech = 0;
-    var count = 0;
+    var count1 = 0;
+    var count2 = 0;
+    var count3 = 0;
 
     function vr_function() {
       window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
@@ -56,32 +58,31 @@
               if (document.getElementById('memo1').value != "") {
                 document.getElementById('memo1').style.color = "orange";
                 document.getElementById('label1').innerHTML = "Clear!";
-                count++;
-                console.log(count);
+                count1 = 1;
+                console.log(count1);
               }
             }
             if (memo2 != -1) {
               if (document.getElementById('memo2').value != "") {
                 document.getElementById('memo2').style.color = "orange";
                 document.getElementById('label2').innerHTML = "Clear!";
-                count++;
-                console.log(count);
-
+                console.log(count2);
+                count2 = 1;
               }
             }
             if (memo3 != -1) {
               if (document.getElementById('memo3').value != "") {
                 document.getElementById('memo3').style.color = "orange";
                 document.getElementById('label3').innerHTML = "Clear!";
-                count++;
-                console.log(count);
+                console.log(count3);
+                count3 = 1;
               }
             }
-            if(count == 1){
+            if(count1 != 0 || count2 != 0 || count3 != 0){
               document.tree.src = "tree_seichou04.png";
-            }else if(count == 2){
+            }else if((count1 != 0 && count2 != 0) || (count1 != 0 && count3 != 0) || (count2 != 0 && count3 != 0)){
               document.tree.src = "tree_seichou07.png";
-            }else if(count == 3){
+            }else if(count1 != 0 && count2 != 0 && count3 != 0){
               document.tree.src = "tree_seichou09.png";
 
             }
