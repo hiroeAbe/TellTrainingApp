@@ -88,3 +88,21 @@ background: #586b8f;
 .tori{
   text-align: right;
 }
+.speech > #speechBt{
+  font-family: 'Avenir', 'Corbel', 'Osaka', 'MS Pゴシック', sans-serif;
+  font-size: 14px;
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #586b8f;
+  border: solid 2px #586b8f;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.speech > #speechBt:hover {
+  background: #586b8f;
+  color: white;
+}
